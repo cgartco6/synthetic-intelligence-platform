@@ -2,6 +2,13 @@ from agents.strategic_agent import StrategicAgent
 from agents.deep_agent import DeepAgent
 from agents.ai_agent import AIAgent
 from agents.helper_agent import HelperAgent
+from core.evaluator import Evaluator
+
+self.evaluator = Evaluator()
+
+score = self.evaluator.score(result)
+if score < 7:
+    result = self.evaluator.improve(result)
 
 class Orchestrator:
     def __init__(self, memory):

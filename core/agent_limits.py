@@ -1,0 +1,3 @@
+MAX_TASKS = 50
+MAX_TOKENS = 4000
+MAX_RUNTIME = 30  # seconds

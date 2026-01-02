@@ -1,0 +1,19 @@
+from agents.strategic_agent import StrategicAgent
+from agents.deep_agent import DeepAgent
+from agents.ai_agent import AIAgent
+from agents.helper_agent import HelperAgent
+
+class AgentFactory:
+    def __init__(self, memory):
+        self.memory = memory
+
+    def create(self, role: str):
+        if role == "strategic":
+            return StrategicAgent(self.memory)
+        if role == "deep":
+            return DeepAgent(self.memory)
+        if role == "executor":
+            return AIAgent(self.memory)
+        if role == "helper":
+            return HelperAgent(self.memory)
+        raise ValueError("Unknown agent role")
